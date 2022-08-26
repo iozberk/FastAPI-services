@@ -14,4 +14,4 @@ async def root(request: Request):
 
 @app.post("/")
 async def root_post():
-    return {"message": "Hello World"}    
+    return {"message": "Hello World"}
