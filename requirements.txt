@@ -1,4 +1,5 @@
 fastapi
 gunicorn
 uvicorn
-jinja2
+Jinja2
+pytest
