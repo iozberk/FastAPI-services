@@ -1,17 +1,8 @@
 import pathlib
-import os
 import io
 import uuid
 from functools import lru_cache
-from fastapi import(
-    FastAPI,
-    Header,
-    HTTPException,
-    Depends,
-    Request,
-    File,
-    UploadFile
-    )
+from fastapi import(FastAPI,Header,HTTPException,Depends,Request,File,UploadFile)
 import pytesseract
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.templating import Jinja2Templates
