@@ -7,7 +7,7 @@ from app.main import BASE_DIR, UPLOAD_DIR, get_settings
 from PIL import Image, ImageChops
 import requests
 
-ENDPOINT="https://fastapi-docker-l3j59.ondigitalocean.app/"
+ENDPOINT="https://king-prawn-app-rmwdk.ondigitalocean.app/"
 
 def test_get_home():
     response = requests.get(ENDPOINT)
