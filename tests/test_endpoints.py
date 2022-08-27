@@ -1,19 +1,18 @@
-
-from http import client
+import shutil
+import time
 from fastapi.testclient import TestClient
-from app.main import app, BASE_DIR
-import shutil, time
+from app.main import app, BASE_DIR, UPLOAD_DIR
 
 client = TestClient(app)
 
 
-from importlib.metadata import files
-
 
 def test_echo_upload():
     img_saved_path = BASE_DIR / "images"
-    for path in img_saved_path.glob('*'):
-        # path = list(BASE_DIR / 'images').glob('*')[0]
-        res = client.post("/img-echo/",files={"file": open(path, 'rb')})
-        assert res.status_code == 200
-    
+    for path in img_saved_path.glob("*"):
+        response = client.post("/img-echo/", files={"file": open(path, 'rb')})
+        assert response.status_code == 200
+        fext = path.suffix.replace('.', '')
+        assert fext in response.headers['content-type']
+    # time.sleep(2)
+    shutil.rmtree(UPLOAD_DIR)
