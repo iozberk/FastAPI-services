@@ -10,7 +10,7 @@ spec:
     source_dir: /
     git:
       branch: main
-      repo_clone_url: https://github.com/codingforentrepreneurs/FastAPI-Microservice-for-Django.git
+      repo_clone_url: https://github.com/iozberk/FastAPI-Django-Microservices.git
     envs:
     - key: DEBUG
       value: "0"
